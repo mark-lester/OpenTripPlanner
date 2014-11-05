@@ -325,10 +325,6 @@ otp.config.modes = {
     //Options widgets)
     //    'TRANSIT,WALK,BICYCLE_RENT': _tr('Transit & Rented Bicycle')
     };
-<<<<<<< HEAD
-
-=======
->>>>>>> chalo-beta
 otp.config.widgetFlags={
 	TripOptionsWidget_Exclude : {
 		WheelChairSelector : true,
