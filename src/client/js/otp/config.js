@@ -390,4 +390,3 @@ otp.config.defaultTripHighlightWeight=16;
 otp.config.defaultTripOpacity=0.3;
 otp.config.defaultTripHighlightColor = "yellow";
 
->>>>>>> chalo-beta
