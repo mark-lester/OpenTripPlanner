@@ -35,7 +35,8 @@ otp.core.Geocoder = otp.Class({
             data : params,
             
             success: function(data) {
-              if (xhr === lastXhr){
+// xhr is not set
+//              if (xhr === lastXhr){
                 if((typeof data) == "string") data = jQuery.parseXML(data);
                 var results = [];
                 $(data).find("geocoderResults").find("results").find("result").each(function () {
@@ -51,7 +52,7 @@ otp.core.Geocoder = otp.Class({
                 });
                 
                 setResultsCallback.call(this, results);
-              }
+//              }
             }
         });        
     } 
