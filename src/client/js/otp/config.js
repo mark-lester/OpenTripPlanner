@@ -306,6 +306,7 @@ otp.config.modes = {
     //    'TRANSIT,WALK,BICYCLE_RENT': _tr('Transit & Rented Bicycle')
     };
 
+<<<<<<< HEAD
 // controls to remove widgets from the planner dialog. set to true if you want to remove them
 // TODO - might be better to include rather than exclude. 
 otp.config.widgetFlags={
@@ -316,3 +317,23 @@ otp.config.widgetFlags={
 		BannedRoutes : false
 	}
 };
+=======
+otp.config.GeoJson={};
+/*
+otp.config.GeoJson.active='myanmar';
+otp.config.GeoJson.regions=[
+     		{
+    			label:'thailand',	
+    			name:'Thailand',	
+    			geojson:'geojson/thailand.geojson',
+			url:"http://www.chalo.org.uk/thailand"
+    		},
+    		{
+    			label:'srilanka',	
+    			name:'Sri Lanka',	
+    			geojson:'geojson/srilanka.geojson',
+			url:"http://www.chalo.org.uk/srilanka"	
+    		},
+];
+*/
+>>>>>>> GeoJson
