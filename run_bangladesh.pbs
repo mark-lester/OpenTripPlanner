@@ -1,0 +1,5 @@
+#!/bin/sh
+date
+cd /var/lib/otp
+sh -x ./make_graph.sh bangladesh >> mg-bangladesh.log
+date

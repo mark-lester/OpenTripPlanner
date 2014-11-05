@@ -325,7 +325,10 @@ otp.config.modes = {
     //Options widgets)
     //    'TRANSIT,WALK,BICYCLE_RENT': _tr('Transit & Rented Bicycle')
     };
+<<<<<<< HEAD
 
+=======
+>>>>>>> chalo-beta
 otp.config.widgetFlags={
 	TripOptionsWidget_Exclude : {
 		WheelChairSelector : true,
@@ -345,8 +348,8 @@ otp.config.defaultModeColours={
 	DEFAULT:'#aaa'
 };
 otp.config.defaultTripWeight=8;
-otp.config.defaultTripOpacity=1;
 otp.config.defaultTripHighlightWeight=16;
+otp.config.defaultTripOpacity=0.3;
 otp.config.defaultTripHighlightOpacity=1;
 otp.config.defaultTripHighlightColor = "yellow";
 
@@ -385,8 +388,3 @@ otp.config.GeoJson.regions=[
 			url:"http://www.chalo.org.uk/laos"	
     		}
 ];
-otp.config.defaultTripWeight=8;
-otp.config.defaultTripHighlightWeight=16;
-otp.config.defaultTripOpacity=0.3;
-otp.config.defaultTripHighlightColor = "yellow";
-
