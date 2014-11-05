@@ -326,7 +326,6 @@ otp.config.modes = {
     //    'TRANSIT,WALK,BICYCLE_RENT': _tr('Transit & Rented Bicycle')
     };
 
-<<<<<<< HEAD
 otp.config.widgetFlags={
 	TripOptionsWidget_Exclude : {
 		WheelChairSelector : true,
@@ -348,8 +347,6 @@ otp.config.defaultModeColours={
 otp.config.defaultTripWeight=8;
 otp.config.defaultTripOpacity=1;
 
-
-       
 
 otp.config.GeoJson={};
 otp.config.GeoJson.active='bangladesh';
