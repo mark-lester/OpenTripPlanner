@@ -325,7 +325,6 @@ otp.config.modes = {
     //Options widgets)
     //    'TRANSIT,WALK,BICYCLE_RENT': _tr('Transit & Rented Bicycle')
     };
-
 otp.config.widgetFlags={
 	TripOptionsWidget_Exclude : {
 		WheelChairSelector : true,
@@ -384,4 +383,3 @@ otp.config.GeoJson.regions=[
 			url:"http://www.chalo.org.uk/laos"	
     		}
 ];
-
