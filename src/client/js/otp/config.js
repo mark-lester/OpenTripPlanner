@@ -346,6 +346,8 @@ otp.config.defaultModeColours={
 };
 otp.config.defaultTripWeight=8;
 otp.config.defaultTripOpacity=1;
+otp.config.defaultTripHighlightWeight = 16;
+otp.config.defaultTripHighlightColor = "yellow";
 
 
 otp.config.GeoJson={};
@@ -382,3 +384,4 @@ otp.config.GeoJson.regions=[
 			url:"http://www.chalo.org.uk/laos"	
     		}
 ];
+
