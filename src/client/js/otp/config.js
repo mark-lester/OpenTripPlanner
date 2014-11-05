@@ -305,3 +305,47 @@ otp.config.modes = {
     //Options widgets)
     //    'TRANSIT,WALK,BICYCLE_RENT': _tr('Transit & Rented Bicycle')
     };
+
+// controls to remove widgets from the planner dialog. set to true if you want to remove them
+// TODO - might be better to include rather than exclude. 
+otp.config.widgetFlags={
+	TripOptionsWidget_Exclude : {
+		WheelChairSelector : false,
+		MaxDistanceSelector : false,
+		PreferredRoutes : false,
+		BannedRoutes : false
+	}
+};
+otp.config.GeoJson={};
+/*
+otp.config.GeoJson.active='myanmar';
+otp.config.GeoJson.regions=[
+     		{
+    			label:'thailand',	
+    			name:'Thailand',	
+    			geojson:'geojson/thailand.geojson',
+			url:"http://www.chalo.org.uk/thailand"
+    		},
+    		{
+    			label:'srilanka',	
+    			name:'Sri Lanka',	
+    			geojson:'geojson/srilanka.geojson',
+			url:"http://www.chalo.org.uk/srilanka"	
+    		},
+];
+*/
+otp.config.defaultModeColours={
+       WALK:'#444',
+         BICYCLE:'#0073e5',
+         SUBWAY:'#f00',
+         RAIL: '#ff0000',
+         BUS:'#080',
+         TRAM:'#800',
+         CAR:'#FFA500',
+       DEFAULT:'#aaa'
+ };
+otp.config.defaultTripWeight=8;
+otp.config.defaultTripHighlightWeight=16;
+otp.config.defaultTripOpacity=0.3;
+otp.config.defaultTripHighlightColor = "yellow";
+
