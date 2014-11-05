@@ -39,6 +39,13 @@ otp.widgets.tripoptions.TripOptionsWidget =
         this.module = module;
         
         this.controls = {};
+
+	// init widgetFlags to avoid runtime failure 
+	if (!otp.config.widgetFlags)
+		otp.config.widgetFlags={};
+	if (!otp.config.widgetFlags.TripOptionsWidget_Exclude)
+		otp.config.widgetFlags.TripOptionsWidget_Exclude={};
+
     },
 
     addControl : function(id, control, scrollable) {
@@ -268,7 +275,11 @@ otp.widgets.tripoptions.LocationsSelector =
         if(data.queryParams.fromPlace) {
             console.log("rP: "+data.queryParams.fromPlace);
             var fromName = otp.util.Itin.getLocationName(data.queryParams.fromPlace);
+            var fromPlace = otp.util.Itin.getLocationPlace(data.queryParams.fromPlace);
+            var fromLatLng = otp.util.Itin.getLocationLatLng(data.queryParams.fromPlace);
+
             if(fromName) {
+		this.tripWidget.module.setStartPoint(fromLatLng,true,fromName);
                 $("#"+this.id+"-start").val(fromName);
                 this.tripWidget.module.startName = fromName;
             }
@@ -280,6 +291,9 @@ otp.widgets.tripoptions.LocationsSelector =
         
         if(data.queryParams.toPlace) {
             var toName = otp.util.Itin.getLocationName(data.queryParams.toPlace);
+            var toPlace = otp.util.Itin.getLocationPlace(data.queryParams.toPlace);
+            var toLatLng = otp.util.Itin.getLocationLatLng(data.queryParams.toPlace);
+
             if(toName) {
                 $("#"+this.id+"-end").val(toName);
                 this.tripWidget.module.endName = toName;
@@ -423,10 +437,11 @@ otp.widgets.tripoptions.WheelChairSelector =
         this.id = tripWidget.id;
 
 
-        ich['otp-tripOptions-wheelchair']({
+       if (!otp.config.widgetFlags.TripOptionsWidget_Exclude.WheelChairSelector)
+         ich['otp-tripOptions-wheelchair']({
             widgetId : this.id,
             label : this.label,
-        }).appendTo(this.$());
+          }).appendTo(this.$());
 
     },
 
@@ -571,16 +586,17 @@ otp.widgets.tripoptions.MaxDistanceSelector =
         // currentMaxDistance is used to compare against the title string of the option element, to select the correct one
         var currentMaxDistance = otp.util.Geo.distanceString(this.tripWidget.module.maxWalkDistance);
 
-        ich['otp-tripOptions-maxDistance']({
-            widgetId : this.id,
-            presets : presets,
-            label : this.label,
-            //TRANSLATORS: default value for preset values of maximum walk
-            //distances in Trip Options
-            presets_label : _tr("Presets"),
-            distSuffix: this.distSuffix,
-            currentMaxDistance: parseFloat(currentMaxDistance)
-        }).appendTo(this.$());
+        if (!otp.config.widgetFlags.TripOptionsWidget_Exclude.MaxDistanceSelector)
+          ich['otp-tripOptions-maxDistance']({
+              widgetId : this.id,
+              presets : presets,
+              label : this.label,
+              //TRANSLATORS: default value for preset values of maximum walk
+              //distances in Trip Options
+              presets_label : _tr("Presets"),
+              distSuffix: this.distSuffix,
+              currentMaxDistance: parseFloat(currentMaxDistance)
+          }).appendTo(this.$());
 
     },
 
@@ -692,18 +708,19 @@ otp.widgets.tripoptions.PreferredRoutes =
         otp.widgets.tripoptions.TripOptionsWidgetControl.prototype.initialize.apply(this, arguments);
         this.id = tripWidget.id+"-preferredRoutes";
         
-        ich['otp-tripOptions-preferredRoutes']({
-            widgetId : this.id,
-            //TRANSLATORS: label Preferred Routes: (routes/None)
-            preferredRoutes_label: _tr("Preferred Routes"),
-            //TRANSLATORS: button to edit Preffered public transport Routes
-            edit: _tr("Edit"),
-            //TRANSLATORS: Words in brackets when no Preffered public transport route is set
-            none : _tr("None"),
-            //TRANSLATORS: Label for Weight slider  to set to preffered public
-            //transport routes
-            weight: _tr("Weight")
-        }).appendTo(this.$());
+      if (!otp.config.widgetFlags.TripOptionsWidget_Exclude.PreferredRoutes)
+          ich['otp-tripOptions-preferredRoutes']({
+              widgetId : this.id,
+              //TRANSLATORS: label Preferred Routes: (routes/None)
+              preferredRoutes_label: _tr("Preferred Routes"),
+              //TRANSLATORS: button to edit Preffered public transport Routes
+              edit: _tr("Edit"),
+              //TRANSLATORS: Words in brackets when no Preffered public transport route is set
+              none : _tr("None"),
+              //TRANSLATORS: Label for Weight slider  to set to preffered public
+              //transport routes
+              weight: _tr("Weight")
+          }).appendTo(this.$());
         
         //TRANSLATORS: widget title
         this.selectorWidget = new otp.widgets.RoutesSelectorWidget(this.id+"-selectorWidget", this, _tr("Preferred Routes"));
@@ -812,7 +829,8 @@ otp.widgets.tripoptions.BannedRoutes =
         html += _tr("Banned routes") + ': <span id="'+this.id+'-list">('+_tr("None")+')</span>';
         html += '<div style="clear:both;"></div></div>';
         
-        $(html).appendTo(this.$());
+        if (!otp.config.widgetFlags.TripOptionsWidget_Exclude.BannedRoutes) 
+            $(html).appendTo(this.$());
 
         //TRANSLATORS: Widget title
         this.selectorWidget = new otp.widgets.RoutesSelectorWidget(this.id+"-selectorWidget", this, _tr("Banned routes"));
