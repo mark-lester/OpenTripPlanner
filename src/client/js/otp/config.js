@@ -38,13 +38,13 @@ otp.config = {
     /**
      * The OTP web service locations
      */
-    hostname : "",
+    hostname : "http://www.chalo.org.uk",
     //municoderHostname : "http://localhost:8080",
     //datastoreUrl : 'http://localhost:9000',
     // In the 0.10.x API the base path is "otp-rest-servlet/ws"
     // From 0.11.x onward the routerId is a required part of the base path.
     // If using a servlet container, the OTP WAR should be deployed to context path /otp
-    restService: "otp/routers/default",
+    restService: "/laos/otp/routers/default",
 
     /**
      * Base layers: the base map tile layers available for use by all modules.
@@ -62,6 +62,19 @@ otp.config = {
      
     baseLayers: [
         {
+            name: 'OSM Standard',
+            tileUrl: 'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+//            subdomains : ['otile1','otile2','otile3','otile4'],
+            attribution : 'Map provided by <a href="http://www.openstreetmap.org/" target="_blank">OpenStreetMap</a> and contributors.'
+        },           
+        {
+            name: 'OSM Transport',
+            tileUrl: 'http://{s}.tile.thunderforest.com/transport-dark/{z}/{x}/{y}.png',
+//            subdomains : ['a','b','c'],
+            attribution : 'Map provided by <a href="http://www.openstreetmap.org/" target="_blank">OpenStreetMap</a> and contributors.'
+        },           
+
+        {
             name: 'MapQuest OSM',
             tileUrl: 'http://{s}.mqcdn.com/tiles/1.0.0/osm/{z}/{x}/{y}.png',
             subdomains : ['otile1','otile2','otile3','otile4'],
@@ -73,6 +86,7 @@ otp.config = {
             subdomains : ['otile1','otile2','otile3','otile4'],
             attribution : 'Data, imagery and map information provided by <a href="http://open.mapquest.com" target="_blank">MapQuest</a>, <a href="http://www.openstreetmap.org/" target="_blank">OpenStreetMap</a> and contributors.'
         },           
+
     ],
     
 
@@ -94,9 +108,10 @@ otp.config = {
      * Site name / description / branding display options
      */
 
-    siteName            : "My OTP Instance",
+    siteName            : "Laos Route Planner",
+    siteUrl            : "http://www.chalo.org.uk/",
     siteDescription     : "An OpenTripPlanner deployment.",
-    logoGraphic         : 'images/otp_logo_darkbg_40px.png',
+    logoGraphic         : 'images/cow-icon.png',
     // bikeshareName    : "",
     //Enable this if you want to show frontend language chooser
     showLanguageChooser : true,
@@ -104,7 +119,7 @@ otp.config = {
     showLogo            : true,
     showTitle           : true,
     showModuleSelector  : true,
-    metric              : false,
+    metric              : true,
 
 
     /**
@@ -123,7 +138,7 @@ otp.config = {
         {
             id : 'planner',
             className : 'otp.modules.multimodal.MultimodalPlannerModule',
-            defaultBaseLayer : 'MapQuest OSM',
+            defaultBaseLayer : 'OSM Transport',
             isDefault: true
         },
         {
@@ -146,8 +161,13 @@ otp.config = {
 
     geocoders : [
         {
-            name: 'OTP built-in geocoder',
-            className: 'otp.core.GeocoderBuiltin'
+        'name': 'geocoder',
+        'className': 'otp.core.Geocoder',
+        'url': 'http://www.chalo.org.uk:8092/geocoder/geocode-test',
+	'port':8092,
+        'addressParam': 'address'
+        //    name: 'OTP built-in geocoder',
+        //    className: 'otp.core.GeocoderBuiltin'
             // URL and query parameter do not need to be set for built-in geocoder.
         }
     ],
@@ -156,7 +176,7 @@ otp.config = {
 
     //This is shown if showLanguageChooser is true
     infoWidgetLangChooser : {
-        title: '<img src="/images/language_icon.svg" onerror="this.onerror=\'\';this.src=\'/images/language_icon.png\'" width="30px" height="30px"/>', 
+        title: '<img src="images/language_icon.svg" onerror="this.onerror=\'\';this.src=\'images/language_icon.png\'" width="30px" height="30px"/>', 
         languages: true
     },
     
@@ -305,20 +325,29 @@ otp.config.modes = {
     //Options widgets)
     //    'TRANSIT,WALK,BICYCLE_RENT': _tr('Transit & Rented Bicycle')
     };
-
-// controls to remove widgets from the planner dialog. set to true if you want to remove them
-// TODO - might be better to include rather than exclude. 
 otp.config.widgetFlags={
 	TripOptionsWidget_Exclude : {
-		WheelChairSelector : false,
-		MaxDistanceSelector : false,
-		PreferredRoutes : false,
-		BannedRoutes : false
+		WheelChairSelector : true,
+		MaxDistanceSelector : true,
+		PreferredRoutes : true,
+		BannedRoutes : true
 	}
 };
+otp.config.defaultModeColours={
+	WALK:'#808080',
+        BICYCLE:'#0073e5',
+        SUBWAY:'#f00',
+        RAIL: '#ff0000',
+        BUS:'#080',
+        TRAM:'#800',
+        CAR:'#FFA500',
+	DEFAULT:'#aaa'
+};
+otp.config.defaultTripWeight=8;
+otp.config.defaultTripOpacity=1;
+
 otp.config.GeoJson={};
-/*
-otp.config.GeoJson.active='myanmar';
+otp.config.GeoJson.active='laos';
 otp.config.GeoJson.regions=[
      		{
     			label:'thailand',	
@@ -332,20 +361,22 @@ otp.config.GeoJson.regions=[
     			geojson:'geojson/srilanka.geojson',
 			url:"http://www.chalo.org.uk/srilanka"	
     		},
+    		{
+    			label:'myanmar',	
+    			name:'Myanmar',	
+    			geojson:'geojson/myanmar.geojson',
+			url:"http://www.chalo.org.uk/myanmar"	
+    		},
+    		{
+    			label:'bangladesh',	
+    			name:'Bangladesh',	
+    			geojson:'geojson/bangladesh.geojson',
+			url:"http://www.chalo.org.uk/bangladesh"	
+    		},
+    		{
+    			label:'laos',	
+    			name:'Laos',	
+    			geojson:'geojson/laos.geojson',
+			url:"http://www.chalo.org.uk/laos"	
+    		}
 ];
-*/
-otp.config.defaultModeColours={
-       WALK:'#444',
-         BICYCLE:'#0073e5',
-         SUBWAY:'#f00',
-         RAIL: '#ff0000',
-         BUS:'#080',
-         TRAM:'#800',
-         CAR:'#FFA500',
-       DEFAULT:'#aaa'
- };
-otp.config.defaultTripWeight=8;
-otp.config.defaultTripHighlightWeight=16;
-otp.config.defaultTripOpacity=0.3;
-otp.config.defaultTripHighlightColor = "yellow";
-
