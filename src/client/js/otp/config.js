@@ -306,7 +306,6 @@ otp.config.modes = {
     //    'TRANSIT,WALK,BICYCLE_RENT': _tr('Transit & Rented Bicycle')
     };
 
-<<<<<<< HEAD
 // controls to remove widgets from the planner dialog. set to true if you want to remove them
 // TODO - might be better to include rather than exclude. 
 otp.config.widgetFlags={
@@ -317,7 +316,6 @@ otp.config.widgetFlags={
 		BannedRoutes : false
 	}
 };
-=======
 otp.config.GeoJson={};
 /*
 otp.config.GeoJson.active='myanmar';
@@ -336,4 +334,18 @@ otp.config.GeoJson.regions=[
     		},
 ];
 */
->>>>>>> GeoJson
+otp.config.defaultModeColours={
+       WALK:'#444',
+         BICYCLE:'#0073e5',
+         SUBWAY:'#f00',
+         RAIL: '#ff0000',
+         BUS:'#080',
+         TRAM:'#800',
+         CAR:'#FFA500',
+       DEFAULT:'#aaa'
+ };
+otp.config.defaultTripWeight=8;
+otp.config.defaultTripHighlightWeight=16;
+otp.config.defaultTripOpacity=0.3;
+otp.config.defaultTripHighlightColor = "yellow";
+
