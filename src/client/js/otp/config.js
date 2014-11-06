@@ -345,7 +345,7 @@ otp.config.defaultModeColours={
 };
 otp.config.defaultTripWeight=8;
 otp.config.defaultTripHighlightWeight=16;
-otp.config.defaultTripOpacity=0.3;
+otp.config.defaultTripOpacity=1;
 otp.config.defaultTripHighlightOpacity=1;
 otp.config.defaultTripHighlightColor = "yellow";
 
