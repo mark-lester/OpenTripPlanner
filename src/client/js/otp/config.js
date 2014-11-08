@@ -38,7 +38,7 @@ otp.config = {
     /**
      * The OTP web service locations
      */
-    hostname : "http://www.chalo.org.uk",
+    hostname : "http://www.wikitimetable.com",
     //municoderHostname : "http://localhost:8080",
     //datastoreUrl : 'http://localhost:9000',
     // In the 0.10.x API the base path is "otp-rest-servlet/ws"
@@ -109,7 +109,7 @@ otp.config = {
      */
 
     siteName            : "Myanmar Route Planner",
-    siteUrl            : "http://www.chalo.org.uk/",
+    siteUrl            : "http://www.wikitimetable.com/",
     siteDescription     : "An OpenTripPlanner deployment.",
     logoGraphic         : 'images/cow-icon.png',
     // bikeshareName    : "",
@@ -163,7 +163,7 @@ otp.config = {
         {
         'name': 'geocoder',
         'className': 'otp.core.Geocoder',
-        'url': 'http://www.chalo.org.uk:8090/geocoder/geocode-test',
+        'url': 'http://www.wikitimetable.com:8090/geocoder/geocode-test',
 	'port':8090,
         'addressParam': 'address'
         //    name: 'OTP built-in geocoder',
@@ -353,30 +353,30 @@ otp.config.GeoJson.regions=[
     			label:'thailand',	
     			name:'Thailand',	
     			geojson:'geojson/thailand.geojson',
-			url:"http://www.chalo.org.uk/thailand"
+			url:"http://www.wikitimetable.com/thailand"
     		},
     		{
     			label:'srilanka',	
     			name:'Sri Lanka',	
     			geojson:'geojson/srilanka.geojson',
-			url:"http://www.chalo.org.uk/srilanka"	
+			url:"http://www.wikitimetable.com/srilanka"	
     		},
     		{
     			label:'myanmar',	
     			name:'Myanmar',	
     			geojson:'geojson/myanmar.geojson',
-			url:"http://www.chalo.org.uk/myanmar"	
+			url:"http://www.wikitimetable.com/myanmar"	
     		},
     		{
     			label:'bangladesh',	
     			name:'Bangladesh',	
     			geojson:'geojson/bangladesh.geojson',
-			url:"http://www.chalo.org.uk/bangladesh"	
+			url:"http://www.wikitimetable.com/bangladesh"	
     		},
     		{
     			label:'laos',	
     			name:'Laos',	
     			geojson:'geojson/laos.geojson',
-			url:"http://www.chalo.org.uk/laos"	
+			url:"http://www.wikitimetable.com/laos"	
     		}
 ];
