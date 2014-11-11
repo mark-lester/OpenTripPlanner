@@ -54,12 +54,12 @@ otp.locale.English = {
     infoWidgets : [
             {
                 title: 'About',
-                content: '<p>About this site</p>',
+                content: 'WIkiTimetable <p><a href="/docs/">Documentation</a>',
                 //cssClass: 'otp-contactWidget',
             },
             {
                 title: 'Contact',
-                content: '<p>Comments? Contact us at...</p>'
+                content: 'email <a href="mailto:info@wikitimetable.com" target="_top">info@wikitimetable.com</a>'
             },
     ],
 
