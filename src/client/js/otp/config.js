@@ -108,7 +108,7 @@ otp.config = {
      * Site name / description / branding display options
      */
 
-    siteName            : "Myanmar Route Planner",
+    siteName            : "WikiTimeTable Myanmar Route Planner",
     siteUrl            : "http://www.wikitimetable.com/",
     siteDescription     : "An OpenTripPlanner deployment.",
     logoGraphic         : 'images/cow-icon.png',
