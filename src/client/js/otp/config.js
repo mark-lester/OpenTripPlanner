@@ -163,8 +163,8 @@ otp.config = {
         {
         'name': 'geocoder',
         'className': 'otp.core.Geocoder',
-        'url': 'http://www.wikitimetable.com:8092/geocoder/geocode-test',
-	'port':8092,
+        'url': 'http://www.wikitimetable.com:8093/geocoder/geocode-test',
+	'port':8093,
         'addressParam': 'address'
         //    name: 'OTP built-in geocoder',
         //    className: 'otp.core.GeocoderBuiltin'
@@ -349,15 +349,22 @@ otp.config.defaultTripHighlightWeight=16;
 otp.config.defaultTripHighlightColor="yellow";
 
 otp.config.GeoJson={};
-otp.config.GeoJson.active='laos';
+otp.config.GeoJson.active='india';
 
 otp.config.GeoJson.regions=[
+     		{
+    			label:'india',	
+    			name:'India',	
+    			geojson:'geojson/india.geojson',
+			url:"http://www.wikitimetable.com/india"
+    		},
      		{
     			label:'thailand',	
     			name:'Thailand',	
     			geojson:'geojson/thailand.geojson',
 			url:"http://www.wikitimetable.com/thailand"
     		},
+
     		{
     			label:'srilanka',	
     			name:'Sri Lanka',	
