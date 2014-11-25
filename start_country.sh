@@ -27,6 +27,8 @@ case $country in
         port1=8103;port2=8203 ;;
     laos )
         port1=8104;port2=8204 ;;
+    india` )
+        port1=8105;port2=8205 ;;
 esac
 echo STARTING `date` >> $LOGFILE
 nohup /usr/bin/java \

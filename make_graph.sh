@@ -10,6 +10,8 @@ case $country in
         github_name=Bangladesh ;;
     laos )
         github_name=Laos ;;
+    india )
+        github_name=India ;;
 esac
 echo INDEXING   $country $github_name `date` 
 export country github_name
