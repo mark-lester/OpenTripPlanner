@@ -44,7 +44,7 @@ otp.config = {
     // In the 0.10.x API the base path is "otp-rest-servlet/ws"
     // From 0.11.x onward the routerId is a required part of the base path.
     // If using a servlet container, the OTP WAR should be deployed to context path /otp
-    restService: "/laos/otp/routers/default",
+    restService: "/india/otp/routers/default",
 
     /**
      * Base layers: the base map tile layers available for use by all modules.
@@ -108,7 +108,7 @@ otp.config = {
      * Site name / description / branding display options
      */
 
-    siteName            : "WikiTimeTable Laos Route Planner",
+    siteName            : "WikiTimeTable LIndia Route Planner",
     siteUrl            : "http://www.wikitimetable.com/",
     siteDescription     : "An OpenTripPlanner deployment.",
     logoGraphic         : 'images/cow-icon.png',
