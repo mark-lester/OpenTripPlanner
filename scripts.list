@@ -11,7 +11,7 @@ run_laos.pbs
 run_myanmar.pbs
 run_srilanka.pbs
 run_thailand.pbs
-run_banglaore.pbs
+run_bangalore.pbs
 run_mumbai.pbs
 run_kualalumpur.pbs
 countries

@@ -1,0 +1,9 @@
+all:Graph.obj
+
+$(country).zip:$(github_name)/*.txt
+	(cd $(github_name) ;zip ../$(country).zip *.txt)
+
+Graph.obj:$(country).zip
+	java -Xmx4G -jar /var/lib/otp/$(country)-otp.jar --build .
+	scp Graph.obj gee-2:/var/gee/$(country)/Graph.obj
+	/var/lib/otp/start_country.sh $(country)
