@@ -1,0 +1,5 @@
+#!/bin/sh
+
+cd /var/lib/otp
+sh -x ./make_graph.sh mumbai >> mg-mumbai.log
+date

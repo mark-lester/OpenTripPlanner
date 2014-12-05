@@ -3,3 +3,8 @@ cd /var/lib/otp
 ./start_country.sh srilanka 
 ./start_country.sh myanmar 
 ./start_country.sh bangladesh 
+./start_country.sh laos 
+./start_country.sh india 
+./start_country.sh mumbai 
+./start_country.sh bangalore 
+./start_country.sh kualalumpur 
