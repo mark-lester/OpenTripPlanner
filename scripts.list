@@ -15,3 +15,12 @@ run_bangalore.pbs
 run_mumbai.pbs
 run_kualalumpur.pbs
 countries
+batch_bangalore.sh
+batch_bangladesh.sh
+batch_india.sh
+batch_kualalumpur.sh
+batch_laos.sh
+batch_mumbai.sh
+batch_myanmar.sh
+batch_srilanka.sh
+batch_thailand.sh
