@@ -14,8 +14,8 @@ case $country in
         github_name=India ;;
     mumbai )
         github_name=Mumbai ;;
-    banglaore )
-        github_name=Banglaore ;;
+    bangalore )
+        github_name=Bangalore ;;
     kualalumpur )
         github_name=Kuala-Lumpur ;;
 esac
