@@ -381,5 +381,12 @@ otp.config.GeoJson.regions=[
     			name:'Laos',	
     			geojson:'geojson/laos.geojson',
 			url:"http://www.wikitimetable.com/laos"	
+    		},
+		{
+    			label:'laos-routemap',	
+    			name:'Laos Route Map',	
+    			geojson:'geojson/laos.routemap.geojson',
+			url:"http://www.wikitimetable.com/laos"	
     		}
+
 ];
