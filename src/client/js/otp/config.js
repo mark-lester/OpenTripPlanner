@@ -383,7 +383,7 @@ otp.config.GeoJson.regions=[
 			url:"http://www.wikitimetable.com/laos"	
     		},
 		{
-    			label:'laos-routemap',	
+    			label:'laosroutemap',	
     			name:'Laos Route Map',	
     			geojson:'geojson/laos.routemap.geojson',
 			url:"http://www.wikitimetable.com/laos"	
